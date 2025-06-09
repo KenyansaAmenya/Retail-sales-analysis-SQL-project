@@ -4,9 +4,9 @@ select * from sales.retail_sales rs;
 select count(*)
 from sales.retail_sales rs;
 '''
-'''sql
 --  use
 -- Data cleaning
+```sql
 select * from sales.retail_sales rs 
 where 
 rs.transactions_id is null
@@ -30,7 +30,7 @@ or
 rs.cogs is null
 or
 rs.total_sale is null;
-'''
+```
 
 '''sql
 -- deleting rows in sql
