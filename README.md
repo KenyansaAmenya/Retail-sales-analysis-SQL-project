@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Retail-sales-analysis-SQL-project
 ## Project Overview
 
