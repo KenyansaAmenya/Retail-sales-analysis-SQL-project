@@ -307,6 +307,4 @@ This project helped me in covering database setup, data cleaning, exploratory da
 ## Author - Felix Amenya
 
 This project is part of my portfolio, showcasing my SQL skills essential for a data analyst. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
-=======
 
->>>>>>> d65a5a3474508cca1b51adb4629bcbcdaa854461
