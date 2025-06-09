@@ -1,12 +1,12 @@
-# Retail-sales-analysis-SQL-project
 select * from sales.retail_sales rs;
-'''sql
+
 select count(*)
 from sales.retail_sales rs;
-'''
-'''sql
+
+
 --  use
 -- Data cleaning
+
 select * from sales.retail_sales rs 
 where 
 rs.transactions_id is null
@@ -30,9 +30,7 @@ or
 rs.cogs is null
 or
 rs.total_sale is null;
-'''
 
-'''sql
 -- deleting rows in sql
 delete from sales.retail_sales rs
 where
@@ -57,30 +55,24 @@ or
 rs.cogs is null
 or
 rs.total_sale is null;
-'''
 
-'''sql
 -- Data exploration
+
 -- How many sales we have?
 select count(*)
 as total_sale
 from sales.retail_sales;
-'''
 
-'''sql
 -- How many customers we have?
 select count(distinct customer_id)
 as total_sale
 from sales.retail_sales;
-'''
-'''sql
+
 -- How many categories we have?
 select count(distinct category)
 as total_sale
 from sales.retail_sales;
-'''
 
-'''sql
 select distinct category from sales.retail_sales;
 
 -- Data analysis & Business key problems & answers
@@ -89,9 +81,7 @@ select distinct category from sales.retail_sales;
 select * from
 sales.retail_sales
 where sale_date = '2022-11-05';
-'''
 
-'''sql
 -- Q2 Write a SQL query to retrieve all transaction where the category is 'clothing' and the quantity sold is more than 4  in the month of nov 2022
 
 select
@@ -115,9 +105,7 @@ and
       TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
       and 
       quantity >= 4;
-'''
 
-'''sql
 -- Q3 Write an SQL query to calculate the total sales (total_sale) for each category and total orders.
 
 select 
@@ -126,24 +114,18 @@ select
        count(*) as total_orders
 from sales.retail_sales
 group by 1;
-'''
-
-'''sql
+       
 -- q4. Write a SQL query to find the average age of customers who purchased items from the 'Beuaty' category.
 
 select 
 ROUND(AVG(age), 1) as avg_age
 from sales.retail_sales
 where category = 'Beauty';
-'''
 
-'''sql
 -- Q.5 Write a SQL query to find all transactions where the total_sale is greater than 1000.
  select * from sales.retail_sales
  where total_sale > 1000;
-'''
 
-'''sql
 -- Q6 Write a SQL query to find the total number of tansactions (transaction_id) made by each gender in each category
 select 
       category,
@@ -154,9 +136,7 @@ group by
         category,
         gender 
 order by 1;
-'''
 
-'''sql
 -- Q. 7 Write a SQL query to calculate the average sale for each month. Find out best selling month in each year.
 
 select 
@@ -179,9 +159,7 @@ from sales.retail_sales
 group by 1, 2
 ) as t1
 where rank = 1;
-'''
 
-'''sql
 -- q. 8 write an SQL query to find the top 5 customers based on the highest total sales
 
 select 
@@ -191,9 +169,7 @@ from sales.retail_sales
 group by 1
 order by 2 desc
 limit 5;
-'''
 
-'''sql
 -- Q. 9 Write an SQL query to find the number of unique customers who purchased items from each category.
 
 select 
@@ -201,9 +177,7 @@ category,
 count(distinct customer_id) as cnt_unique_cs
 from sales.retail_sales
 group by category ;
-'''
 
-'''sql
 -- Q. 10 write a SQL query to create each shift and number of orders (Example Morning <=12, Afternoon Between 12 & 17, Evening > 17)
 
 select *,
@@ -233,4 +207,3 @@ from hourly_sale
 group by shift;
 
 -- end of the project
-'''
